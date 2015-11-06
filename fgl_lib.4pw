@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="932237539" gstVersion="3000b" version="3.1">
+<Project defaultApplication="-1786624497" gstVersion="3000b" version="3.1">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="High-DPI Icon (72x72 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-hdpi (72x72 px)" name="icon-hdpi" readOnly="false" type="FILE"/>
@@ -47,13 +47,11 @@
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
   <Group label="fgl_lib" language="Genero" targetDirectory="$(ProjectDir)">
-    <Group label="application">
-      <Application binaryName="application_test" id="932237539" label="application_test"/>
-      <Library binaryName="lib_application" id="1639900793" label="lib_application"/>
-    </Group>
-    <Group label="aui"/>
-    <Group label="date"/>
-    <Group label="random"/>
-    <Group label="string"/>
+    <Library binaryName="fgl_lib" id="-1306983152" label="fgl_lib">
+      <File filePath="lib_string.4gl"/>
+    </Library>
+    <Application binaryName="test_lib_string" id="-1786624497" label="test_lib_string">
+      <File filePath="test_lib_string.4gl"/>
+    </Application>
   </Group>
 </Project>
