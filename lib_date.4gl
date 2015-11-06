@@ -81,6 +81,15 @@ DEFINE dim SMALLINT
         RETURN MDY(mm,dd,yy)
     END IF
 END FUNCTION
+
+
+
+FUNCTION add_years(d,y,roundup)
+DEFINE d DATE
+DEFINE y SMALLINT
+DEFINE roundup BOOLEAN
+    RETURN add_months(d,y*12,roundup)
+END FUNCTION
         
     
     

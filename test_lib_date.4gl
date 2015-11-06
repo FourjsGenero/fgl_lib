@@ -8,6 +8,7 @@ FUNCTION test_lib_date()
     CALL test_first_of_month()
     CALL test_last_of_month()
     CALL test_add_months()
+    CALL test_add_years()
 END FUNCTION
 
 FUNCTION test_is_leapyear()
@@ -59,5 +60,18 @@ FUNCTION test_add_months()
     test31(add_months,"31/01/2015",1,TRUE,"01/03/2015")
     test31(add_months,"31/08/2015",-2,FALSE,"30/06/2015")
     test31(add_months,"31/08/2015",-2,TRUE,"01/07/2015")
+    
+END FUNCTION
+
+FUNCTION test_add_years()
+    test31(add_years,"01/01/2015",0,FALSE,"01/01/2015")
+    test31(add_years,"01/01/2015",1,FALSE,"01/01/2016")
+    test31(add_years,"01/01/2015",6,FALSE,"01/01/2021")
+    test31(add_years,"01/01/2015",12,FALSE,"01/01/2027")
+    test31(add_years,"01/01/2015",-1,FALSE,"01/01/2014")
+    test31(add_years,"29/02/2016",1,FALSE,"28/02/2017")
+    test31(add_years,"29/02/2016",1,TRUE,"01/03/2017")
+    test31(add_years,"29/02/2016",-2,FALSE,"28/02/2014")
+    test31(add_years,"29/02/2016",-2,TRUE,"01/03/2014")
     
 END FUNCTION
