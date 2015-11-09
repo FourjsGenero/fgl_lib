@@ -12,7 +12,7 @@ END FUNCTION
 
 
 
-FUNCTION toProperCase(l_original)
+FUNCTION proper(l_original)
 DEFINE l_original STRING
 
 DEFINE l_length, l_pos INTEGER
@@ -70,33 +70,7 @@ DEFINE spaces_2_add STRING
 END FUNCTION
     
 
--- move to lib_number
-FUNCTION number_suffix(l_number)
-DEFINE l_number INTEGER
 
-    IF l_number = 0 THEN
-        RETURN ""
-    END IF
-    LET l_number = l_number MOD 100
-    CASE
-        WHEN l_number = 3
-            RETURN "rd"
-        WHEN l_number = 11
-            RETURN "th"
-        WHEN l_number MOD 10 = 1
-            RETURN "st"
-        WHEN l_number = 12
-            RETURN "th"
-        WHEN l_number MOD 10 = 2
-            RETURN "nd"
-        WHEN l_number = 13
-            RETURN "th"
-        WHEN l_number MOD 10 = 3
-            RETURN "rd"
-        OTHERWISE
-            RETURN "th"
-    END CASE
-END FUNCTION
         
     
         

@@ -6,6 +6,7 @@ FUNCTION test_lib_string()
     CALL test_replace()
     CALL test_proper()
     CALL test_center()
+
     #CALL test_number_suffix()
 END FUNCTION
 
@@ -16,14 +17,14 @@ FUNCTION test_replace()
 END FUNCTION
 --
 FUNCTION test_proper()
-    test11(toProperCase,"hello","Hello")
-    test11(toProperCase,"","")
-    test11(toProperCase,"a","A")
-    test11(toProperCase,"An","An")
-    test11(toProperCase,"hello","Hello")
-    test11(toProperCase,"hello world","Hello World")
-    test11(toProperCase,"HELLO WORLD","Hello World")
-    test11(toProperCase,"Hello World","Hello World")
+    test11(proper,"hello","Hello")
+    test11(proper,"","")
+    test11(proper,"a","A")
+    test11(proper,"An","An")
+    test11(proper,"hello","Hello")
+    test11(proper,"hello world","Hello World")
+    test11(proper,"HELLO WORLD","Hello World")
+    test11(proper,"Hello World","Hello World")
 END FUNCTION
 
 FUNCTION test_center()
@@ -32,12 +33,7 @@ FUNCTION test_center()
     test21(center,"odd",6," odd  ")
     test21(center,"even",8,"  even  ")
 END FUNCTION
---
---FUNCTION test_number_suffix()
---DEFINE i INTEGER
---
-    --FOR i = 0 TO 120
-        --DISPLAY i, lib_string.number_suffix(i)
-    --END FOR
---END FUNCTION
+
+
+
     

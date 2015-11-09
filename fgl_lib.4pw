@@ -49,12 +49,15 @@
   <Group label="fgl_lib" language="Genero" targetDirectory="$(ProjectDir)">
     <Library binaryName="fgl_lib" id="-1306983152" label="fgl_lib">
       <File filePath="lib_date.4gl"/>
+      <File filePath="lib_date.str"/>
       <File filePath="lib_number.4gl"/>
+      <File filePath="lib_number.str"/>
       <File filePath="lib_string.4gl"/>
       <File filePath="test_inc.4gl"/>
     </Library>
-    <Application binaryName="test_lib_string" id="-1786624497" label="test_lib_string">
+    <Application binaryName="test_lib" environment="file:FGLPROFILE=test_lib.fglprofile" id="-1786624497" label="test_lib">
       <File filePath="main.4gl"/>
+      <File filePath="test_lib.fglprofile"/>
       <File filePath="test_lib_date.4gl"/>
       <File filePath="test_lib_number.4gl"/>
       <File filePath="test_lib_string.4gl"/>

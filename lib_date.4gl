@@ -97,6 +97,73 @@ DEFINE y SMALLINT
 DEFINE roundup BOOLEAN
     RETURN add_months(d,y*12,roundup)
 END FUNCTION
+
+
+
+FUNCTION dddd(l_day)
+DEFINE l_day SMALLINT
+
+    CASE 
+        WHEN l_day < 0 
+            RETURN ""
+        WHEN l_day > 6
+            RETURN ""
+        OTHERWISE
+            RETURN LSTR(SFMT("lib_date.day.%1", l_day USING "&"))
+    END CASE
+END FUNCTION
+
+FUNCTION dd(l_day)
+DEFINE l_day SMALLINT
+
+    CASE 
+        WHEN l_day < 0 
+            RETURN ""
+        WHEN l_day > 6
+            RETURN ""
+        OTHERWISE
+            RETURN LSTR(SFMT("lib_date.day2.%1", l_day USING "&"))
+    END CASE
+END FUNCTION
+
+FUNCTION ddd(l_day)
+DEFINE l_day SMALLINT
+
+    CASE 
+        WHEN l_day < 0 
+            RETURN ""
+        WHEN l_day > 6
+            RETURN ""
+        OTHERWISE
+            RETURN LSTR(SFMT("lib_date.day3.%1", l_day USING "&"))
+    END CASE
+END FUNCTION
+
+FUNCTION mmmm(l_month)
+DEFINE l_month SMALLINT
+
+    CASE
+        WHEN l_month < 1
+            RETURN ""
+        WHEN l_month > 12
+            RETURN ""
+        OTHERWISE
+            RETURN LSTR(SFMT("lib_date.month.%1", l_month USING "<<"))
+    END CASE
+END FUNCTION
+
+FUNCTION mmm(l_month)
+DEFINE l_month SMALLINT
+
+    CASE
+        WHEN l_month < 1
+            RETURN ""
+        WHEN l_month > 12
+            RETURN ""
+        OTHERWISE
+            RETURN LSTR(SFMT("lib_date.month3.%1", l_month USING "<<"))
+    END CASE
+END FUNCTION
         
     
     

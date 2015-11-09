@@ -54,5 +54,44 @@ END FUNCTION
 
 
 
+FUNCTION number_suffix(l_number)
+DEFINE l_number INTEGER
+
+DEFINE l_result STRING
+
+    IF l_number = 0 THEN
+        RETURN ""
+    END IF
+    # special case for last 2 digits
+    LET l_number = l_number MOD 100
+    LET l_result = LSTR(SFMT("lib_number.suffix.%1", l_number USING "<&"))
+    IF l_result MATCHES "lib_number*" THEN
+        # carry on
+    ELSE
+        RETURN l_result
+    END IF
+
+    # use last digit
+    LET l_number = l_number MOD 10
+    LET l_result = LSTR(SFMT("lib_number.suffix.%1", l_number USING "<&"))
+    RETURN l_result
+    
+END FUNCTION
+
+
+
+FUNCTION log(x,b)
+DEFINE x,b FLOAT
+
+    RETURN util.Math.log(x)/util.Math.log(b)
+END FUNCTION
+    
+
+
+#TODO functions for floor, round, ceil
+
+
+
+
 
 
