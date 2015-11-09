@@ -36,6 +36,13 @@ END FUNCTION
 
 
 
+FUNCTION days_in_year(y)
+DEFINE y SMALLINT
+    RETURN IIF(is_leapyear(y),366,365)
+END FUNCTION
+
+
+
 FUNCTION first_of_month(m,y)
 DEFINE m, y SMALLINT
     RETURN MDY(m,1,y)

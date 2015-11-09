@@ -36,6 +36,40 @@ DEFINE l_upper BOOLEAN
 END FUNCTION
 
 
+
+FUNCTION center(s,width)
+DEFINE s STRING
+DEFINE width INTEGER
+
+DEFINE l INTEGER
+DEFINE sb base.StringBuffer
+DEFINE i INTEGER
+DEFINE spaces_2_add STRING
+
+    LET s = s.trim()
+    LET l = s.getLength()
+    IF l >=width THEN
+        RETURN s
+    END IF
+    -- prefix with diff / 2 spaces
+    LET spaces_2_add = (width-l)/2
+    LET sb = base.StringBuffer.create()
+    
+    FOR i = 1 TO spaces_2_add
+        CALL sb.append(" ")
+    END FOR
+    CALL sb.append(s)
+    FOR i = 1 TO spaces_2_add
+        CALL sb.append(" ")
+    END FOR
+    IF (width-l) MOD 2 = 1 THEN
+        -- odd number of spaces to add, so add 1 at end
+        CALL sb.append(" ")
+    END IF
+    RETURN sb.toString()
+END FUNCTION
+    
+
 -- move to lib_number
 FUNCTION number_suffix(l_number)
 DEFINE l_number INTEGER

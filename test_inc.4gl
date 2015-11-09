@@ -1,3 +1,7 @@
+&define testconstant(fc,r1) \
+    LET rs1 = fc \
+    DISPLAY SFMT("%4 %1=\"%2\".  Expected Result=%3",#fc,rs1, #r1, IIF(rs1=r1,"PASS","FAIL"))
+
 &define test11(fc,p1,r1) \
     CALL fc(p1) RETURNING rs1 \
     DISPLAY SFMT("%5 %1(%2)=\"%3\".  Expected Result=%4",#fc,#p1,rs1,#r1, IIF(rs1=r1,"PASS","FAIL"))

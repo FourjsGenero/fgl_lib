@@ -5,6 +5,7 @@ IMPORT FGL lib_date
 FUNCTION test_lib_date()
     CALL test_is_leapyear()
     CALL test_days_in_month()
+    CALL test_days_in_year()
     CALL test_first_of_month()
     CALL test_last_of_month()
     CALL test_add_months()
@@ -35,6 +36,13 @@ FUNCTION test_days_in_month()
     test21(days_in_month,10,2016,31)
     test21(days_in_month,11,2016,30)
     test21(days_in_month,12,2016,31)
+END FUNCTION
+
+FUNCTION test_days_in_year()
+    test11(days_in_year,2013,365)
+    test11(days_in_year,2014,365)
+    test11(days_in_year,2015,365)
+    test11(days_in_year,2016,366)
 END FUNCTION
 
 FUNCTION test_first_of_month()

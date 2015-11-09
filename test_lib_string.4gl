@@ -5,6 +5,7 @@ IMPORT FGL lib_string
 FUNCTION test_lib_string()
     CALL test_replace()
     CALL test_proper()
+    CALL test_center()
     #CALL test_number_suffix()
 END FUNCTION
 
@@ -23,6 +24,13 @@ FUNCTION test_proper()
     test11(toProperCase,"hello world","Hello World")
     test11(toProperCase,"HELLO WORLD","Hello World")
     test11(toProperCase,"Hello World","Hello World")
+END FUNCTION
+
+FUNCTION test_center()
+    test21(center,"toobig",2,"toobig")
+    test21(center,"just right",10,"just right")
+    test21(center,"odd",6," odd  ")
+    test21(center,"even",8,"  even  ")
 END FUNCTION
 --
 --FUNCTION test_number_suffix()
