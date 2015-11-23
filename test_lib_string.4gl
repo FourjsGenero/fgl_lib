@@ -6,6 +6,8 @@ FUNCTION test_lib_string()
     CALL test_replace()
     CALL test_proper()
     CALL test_center()
+    CALL test_base64_to_base64url()
+    CALL test_base64url_to_base64()
 
     #CALL test_number_suffix()
 END FUNCTION
@@ -32,6 +34,19 @@ FUNCTION test_center()
     test21(center,"just right",10,"just right")
     test21(center,"odd",6," odd  ")
     test21(center,"even",8,"  even  ")
+END FUNCTION
+
+FUNCTION test_base64_to_base64url()
+
+    test11(base64_to_base64url,"IpsumLorem==","IpsumLorem")
+    test11(base64_to_base64url,"0123+/==","0123-_")
+    test11(base64_to_base64url,"0123+/=+/=","0123-_-_")
+END FUNCTION
+FUNCTION test_base64url_to_base64()
+
+    test11(base64url_to_base64,"IpsumLorem","IpsumLorem==")
+    test11(base64url_to_base64,"0123-_","0123+/==")
+    test11(base64url_to_base64,"0123-_-_","0123+/+/")
 END FUNCTION
 
 

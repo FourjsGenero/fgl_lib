@@ -70,8 +70,41 @@ DEFINE spaces_2_add STRING
 END FUNCTION
     
 
+# Convert Base64 to Base64 safe url format
+FUNCTION base64_to_base64url(s)
+DEFINE  s   STRING
 
-        
+DEFINE  buf base.stringBuffer
+
+    LET buf = base.StringBuffer.create()
+    CALL buf.append(s)
+    CALL buf.replace("+","-",0)
+    CALL buf.replace("/","_",0)
+    CALL buf.replace("=",NULL,0)
+    RETURN buf.toString()
+END FUNCTION
+
+
+# Convert Base64 safe URL to Base64 format
+FUNCTION base64url_to_base64(s)
+DEFINE  s   STRING
+
+DEFINE  buf base.stringBuffer
+
+    LET buf = base.StringBuffer.create()
+    CALL buf.append(s)
+    CALL buf.replace("-","+",0)
+    CALL buf.replace("_","/",0)
+    CASE (s.getLength() MOD 4)
+        WHEN 1
+            RETURN NULL # ERROR (Illegal base64url string!)
+        WHEN 2
+            CALL buf.append("==")
+        WHEN 3
+            CALL buf.append("=")      
+    END CASE
+    RETURN buf.toString()
+END FUNCTION  
     
         
     
