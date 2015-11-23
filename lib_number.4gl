@@ -16,17 +16,19 @@ DEFINE i SMALLINT
 DEFINE d CHAR(1)
 DEFINE s STRING
 DEFINE r BIGINT
+DEFINE l_digits SMALLINT
+
     IF b <= MAX_SMALLINT THEN
         RETURN util.Math.rand(b)
     END IF
     LET s = "0."
-    FOR i = 1 TO 20
+    LET l_digits = log(b,10)*2
+    FOR i = 1 TO l_digits
         LET d = util.Math.rand(10) USING "&"
         LET s = s,d
     END FOR
     
     LET r = b*s
-    #DISPLAY SFMT("%1 x %2 = %3", b,s,r)
     RETURN r
 END FUNCTION
 
