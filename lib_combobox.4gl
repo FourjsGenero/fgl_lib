@@ -1,5 +1,19 @@
 
 
+#+ Populate a combobox with the result of a SQL statement
+#+
+#+ This function populates a given field with the result-set of a SQL
+#+ statement.  
+#+ The format string parameter can be used to format what appears in the 
+#+ second column
+#+
+#+ @code
+#+ CALL lib_combobox.populate_sql("formonly.country","SELECT code, desc FROM country ORDER BY code","%2 (%1)")
+#+
+#+ @param l_fieldname The fieldname in the form containing the combobox
+#+ @param l_sql SQL Statements that returns a result set with 1 or 2 values.  The first value returned is the code, the second value is the description, or may form part of the description based on the format_string parameter
+#+ @param l_format_string SFMT string that can be used to format the second column.  %1 and %2 will refer to the two columns returned by the SQL statement.  Suggested values "%2 (%1)", "%1-%2".  If left blank, the second column in the SQL will be used to populate the description 
+#+
 FUNCTION populate_sql(l_fieldname, l_sql, l_format_string)
 DEFINE l_fieldname STRING
 DEFINE l_sql STRING
