@@ -52,6 +52,7 @@
       <File filePath="lib_combobox.4gl"/>
       <File filePath="lib_date.4gl"/>
       <File filePath="lib_date.str"/>
+      <File filePath="lib_kvp.4gl"/>
       <File filePath="lib_list.4gl"/>
       <File filePath="lib_number.4gl"/>
       <File filePath="lib_number.str"/>
@@ -62,6 +63,7 @@
       <File filePath="main.4gl"/>
       <File filePath="test_lib.fglprofile"/>
       <File filePath="test_lib_date.4gl"/>
+      <File filePath="test_lib_kvp.4gl"/>
       <File filePath="test_lib_list.4gl"/>
       <File filePath="test_lib_number.4gl"/>
       <File filePath="test_lib_string.4gl"/>
