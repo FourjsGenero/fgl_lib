@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Project defaultApplication="-96206192" gstVersion="3000b" version="3.1">
+<Project defaultApplication="-1786624497" gstVersion="30014" version="3.1">
   <Settings>
     <DynamicProperties version="2">
       <DynamicProperty description="High-DPI Icon (72x72 px) path" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Icon-hdpi (72x72 px)" name="icon-hdpi" readOnly="false" type="FILE"/>
@@ -28,7 +28,7 @@
       <DynamicProperty description="Launch screen for iPhone 4" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (640x960 px)" name="launchScreen640x960" readOnly="false" type="FILE"/>
       <DynamicProperty description="Launch screen for iPhone 6 (portrait)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (750x1334 px)" name="launchScreen750x1334" readOnly="false" type="FILE"/>
       <DynamicProperty description="Launch screen for iPad (portrait)" editorInfo="filters:*.png;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen (768x1024 px)" name="launchScreen768x1024" readOnly="false" type="FILE"/>
-      <DynamicProperty description="Launch screen XIB file (Created from Xcode)" editorInfo="filters:*.xib;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen XIB" name="launchScreenXib" readOnly="false" type="FILE"/>
+      <DynamicProperty description="Launch screen Screenboard file (Created from Xcode)" editorInfo="filters:*.storyboard *.xib;openDirDialog:true;replaceDocPath:$(ProjectDir)" initialValue="" isDefaultInherited="false" isHidden="false" label="Launch Screen" name="launchScreenXib" readOnly="false" type="FILE"/>
       <DynamicProperty description="Package identifier" initialValue="" isDefaultInherited="false" isHidden="false" label="ID" name="packageId" readOnly="false" type="TEXT"/>
       <DynamicProperty description="Label of the package" initialValue="" isDefaultInherited="false" isHidden="false" label="Label" name="packageLabel" readOnly="false" type="TEXT"/>
       <DynamicProperty description="Name of the package" initialValue="" isDefaultInherited="false" isHidden="false" label="Name" name="packageName" readOnly="false" type="TEXT"/>
@@ -48,9 +48,11 @@
   <PlatformList version="1.0"/>
   <Group label="fgl_lib" language="Genero" targetDirectory="$(ProjectDir)">
     <Library binaryName="fgl_lib" id="-1306983152" label="fgl_lib">
+      <File filePath="lib_base_application.4gl"/>
       <File filePath="lib_combobox.4gl"/>
       <File filePath="lib_date.4gl"/>
       <File filePath="lib_date.str"/>
+      <File filePath="lib_list.4gl"/>
       <File filePath="lib_number.4gl"/>
       <File filePath="lib_number.str"/>
       <File filePath="lib_string.4gl"/>
@@ -60,8 +62,12 @@
       <File filePath="main.4gl"/>
       <File filePath="test_lib.fglprofile"/>
       <File filePath="test_lib_date.4gl"/>
+      <File filePath="test_lib_list.4gl"/>
       <File filePath="test_lib_number.4gl"/>
       <File filePath="test_lib_string.4gl"/>
+    </Application>
+    <Application binaryName="test_lib_base_application" id="1668822536" label="test_lib_base_application">
+      <File filePath="test_lib_base_application.4gl"/>
     </Application>
     <Application binaryName="test_lib_combobox" id="-96206192" label="test_lib_combobox">
       <File filePath="test_lib_combobox.4gl"/>

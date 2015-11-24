@@ -68,8 +68,25 @@ DEFINE spaces_2_add STRING
     END IF
     RETURN sb.toString()
 END FUNCTION
+
+
+
+FUNCTION reverse(s)
+DEFINE s STRING
+
+DEFINE sb base.StringBuffer
+
+DEFINE i INTEGER
+
+    LET sb = base.StringBuffer.create()
+    FOR i = s.getLength() TO 1 STEP -1
+        CALL sb.append(s.getCharAt(i))
+    END FOR
+    RETURN sb.toString()
+END FUNCTION
     
 
+    
 # Convert Base64 to Base64 safe url format
 FUNCTION base64_to_base64url(s)
 DEFINE  s   STRING

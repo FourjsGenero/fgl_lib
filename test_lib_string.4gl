@@ -6,6 +6,7 @@ FUNCTION test_lib_string()
     CALL test_replace()
     CALL test_proper()
     CALL test_center()
+    CALL test_reverse()
     CALL test_base64_to_base64url()
     CALL test_base64url_to_base64()
 
@@ -34,6 +35,14 @@ FUNCTION test_center()
     test21(center,"just right",10,"just right")
     test21(center,"odd",6," odd  ")
     test21(center,"even",8,"  even  ")
+END FUNCTION
+
+FUNCTION test_reverse()
+    test11(reverse,"","")
+    test11(reverse,"X","X")
+    test11(reverse,"XY","YX")
+    test11(reverse,"Ipsum Lorum","muroL muspI")
+    test11(reverse," X  ","  X ")
 END FUNCTION
 
 FUNCTION test_base64_to_base64url()

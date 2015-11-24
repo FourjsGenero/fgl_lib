@@ -87,10 +87,12 @@ DEFINE x,b FLOAT
 
     RETURN util.Math.log(x)/util.Math.log(b)
 END FUNCTION
-    
+
+
 
 
 #TODO functions for floor, round, ceil
+#TODO functions for int2hex and hex2int
 
 
 
