@@ -39,4 +39,11 @@ DEFINE k lib_kvp.kvpType
     test21(position,k,"x",1)
     test21(position,k,"y",2)
     test21(position,k,"z",3)
+
+    LET k = kvp9("k1","v1","k2","v2","k3","v3","k4","v4","k5","v5","k6","v6","k7","v7","k8","v8","k9","v9")
+    test21(get,k,"k1","v1")
+    test21(get,k,"k7","v7")
+    test21(get,k,"k9","v9")
+
+    
 END FUNCTION

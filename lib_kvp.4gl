@@ -69,3 +69,113 @@ DEFINE i INTEGER
     END FOR
     RETURN 0
 END FUNCTION
+
+FUNCTION kvp1(k1,v1)
+DEFINE k1,v1 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp2(k1,v1,k2,v2)
+DEFINE k1,v1,k2,v2 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    RETURN j
+END FUNCTION
+
+
+FUNCTION kvp3(k1,v1,k2,v2,k3,v3)
+DEFINE k1,v1,k2,v2,k3,v3 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp4(k1,v1,k2,v2,k3,v3,k4,v4)
+DEFINE k1,v1,k2,v2,k3,v3,k4,v4 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    CALL j.put(k4,v4)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp5(k1,v1,k2,v2,k3,v3,k4,v4,k5,v5)
+DEFINE k1,v1,k2,v2,k3,v3,k4,v4,k5,v5 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    CALL j.put(k4,v4)
+    CALL j.put(k5,v5)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp6(k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6)
+DEFINE k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    CALL j.put(k4,v4)
+    CALL j.put(k5,v5)
+    CALL j.put(k6,v6)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp7(k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6,k7,v7)
+DEFINE k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6,k7,v7 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    CALL j.put(k4,v4)
+    CALL j.put(k5,v5)
+    CALL j.put(k6,v6)
+    CALL j.put(k7,v7)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp8(k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6,k7,v7,k8,v8)
+DEFINE k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6,k7,v7,k8,v8 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    CALL j.put(k4,v4)
+    CALL j.put(k5,v5)
+    CALL j.put(k6,v6)
+    CALL j.put(k7,v7)
+    CALL j.put(k8,v8)
+    RETURN j
+END FUNCTION
+
+FUNCTION kvp9(k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6,k7,v7,k8,v8,k9,v9)
+DEFINE k1,v1,k2,v2,k3,v3,k4,v4,k5,v5,k6,v6,k7,v7,k8,v8,k9,v9 STRING
+DEFINE j kvpType
+    LET j = create()
+    CALL j.put(k1,v1)
+    CALL j.put(k2,v2)
+    CALL j.put(k3,v3)
+    CALL j.put(k4,v4)
+    CALL j.put(k5,v5)
+    CALL j.put(k6,v6)
+    CALL j.put(k7,v7)
+    CALL j.put(k8,v8)
+    CALL j.put(k9,v9)
+    RETURN j
+END FUNCTION
+

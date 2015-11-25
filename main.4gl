@@ -1,7 +1,7 @@
 MAIN
 
     -- Put one we are testing first so can see output
-    CALL test_lib_list()
+    CALL test_lib_kvp()
     RETURN
 
     CALL test_lib_number()
