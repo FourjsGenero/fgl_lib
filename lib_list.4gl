@@ -6,6 +6,21 @@ FUNCTION create()
     RETURN util.JSONArray.create()
 END FUNCTION
 
+FUNCTION create_from_string(s, delimiter)
+DEFINE s STRING
+DEFINE delimiter STRING
+
+DEFINE j listType
+DEFINE tok base.StringTokenizer
+
+    LET j = create()
+    LET tok = base.StringTokenizer.create(s,delimiter)
+    WHILE tok.hasMoreTokens()
+        CALL append(j,tok.nextToken())
+    END WHILE
+    RETURN j
+END FUNCTION
+    
 FUNCTION length(j)
 DEFINE j listType
     RETURN j.getLength()

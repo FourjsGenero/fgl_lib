@@ -51,5 +51,12 @@ DEFINE l lib_list.listType
     test21(lib_list.count,l,"fox",1)
     CALL lib_list.append(l,"fox")
     test21(lib_list.count,l,"fox",2)
+
+    LET l = lib_list.create_from_string("red,green,blue,yellow",",")
+    test11(display,l,'["red","green","blue","yellow"]')
+    test11(lib_list.length,l,"4")
+    test21(in,l,"blue",1)
+    test21(in,l,"purple",0)
+    
     
 END FUNCTION
