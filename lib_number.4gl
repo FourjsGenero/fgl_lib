@@ -90,9 +90,91 @@ END FUNCTION
 
 
 
+FUNCTION digit_2_hex(i)
+DEFINE i INTEGER
+DEFINE result CHAR(1)
+
+    CASE 
+        WHEN i >=0 AND i < 10 
+            LET result = i
+            RETURN result
+        WHEN i>=10 AND i <=15
+            LET result = ASCII(i+55)
+            RETURN result
+        OTHERWISE
+            RETURN NULL
+    END CASE
+END FUNCTION
+
+
+
+FUNCTION hex_2_digit(h)
+DEFINE h CHAR(1)
+
+DEFINE result TINYINT
+
+    CASE
+        WHEN h >= "0" AND h<= "9" 
+            LET result = h
+            RETURN result
+        WHEN h >= "A" AND h <="F" 
+            LET result = (ORD(h) - 55)
+            RETURN result
+        OTHERWISE
+            RETURN NULL
+    END CASE
+END FUNCTION
+
+
+
+FUNCTION hex_2_number(h)
+DEFINE h STRING
+
+DEFINE result INTEGER
+
+DEFINE i INTEGER
+DEFINE m  INTEGER
+
+    LET m = 1
+    LET result = 0
+    FOR i = h.getLength() TO 1 STEP -1
+        LET result = result + hex_2_digit(h.getCharAt(i)) * m
+        LET m = m * 16
+    END FOR
+    RETURN result
+END FUNCTION
+
+
+
+FUNCTION number_2_hex(n,b)
+DEFINE n INTEGER
+DEFINE b SMALLINT
+
+DEFINE result STRING
+
+DEFINE d,m INTEGER
+
+    LET result = ""
+
+    LET m = util.Math.pow(16,b-1)
+    WHILE TRUE
+        LET d = n / m
+        LET result = result CLIPPED, digit_2_hex(d) CLIPPED 
+        LET n = n MOD m
+        IF m = 1 THEN 
+            EXIT WHILE
+        ELSE
+            LET m = m / 16
+        END IF
+    END WHILE
+    RETURN result CLIPPED
+END FUNCTION
+        
+
+
 
 #TODO functions for floor, round, ceil
-#TODO functions for int2hex and hex2int
+
 
 
 
