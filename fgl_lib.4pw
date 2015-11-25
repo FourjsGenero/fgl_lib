@@ -49,6 +49,7 @@
   <Group label="fgl_lib" language="Genero" targetDirectory="$(ProjectDir)">
     <Library binaryName="fgl_lib" id="-1306983152" label="fgl_lib">
       <File filePath="lib_base_application.4gl"/>
+      <File filePath="lib_colour.4gl"/>
       <File filePath="lib_combobox.4gl"/>
       <File filePath="lib_date.4gl"/>
       <File filePath="lib_date.str"/>
@@ -62,6 +63,7 @@
     <Application binaryName="test_lib" environment="file:FGLPROFILE=test_lib.fglprofile" id="-1786624497" label="test_lib">
       <File filePath="main.4gl"/>
       <File filePath="test_lib.fglprofile"/>
+      <File filePath="test_lib_colour.4gl"/>
       <File filePath="test_lib_date.4gl"/>
       <File filePath="test_lib_kvp.4gl"/>
       <File filePath="test_lib_list.4gl"/>
