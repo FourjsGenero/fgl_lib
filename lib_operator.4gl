@@ -1,0 +1,6 @@
+&define _abs_(p1) (IIF(p1<0,-p1,p1))
+&define _min_(p1,p2) (IIF(p1<p2,p1,p2))
+&define _max_(p1,p2) (IIF(p1>p2,p1,p2))
+&define _and_(p1,p2) (IIF(p1 AND p2, TRUE, FALSE))
+&define _or_(p1,p2) (IIF(p1 OR p2, TRUE, FALSE))
+&define _xor_(p1,p2) (IIF(p1 AND NOT p2, TRUE, IIF(NOT p1 AND p2, TRUE, FALSE)))
