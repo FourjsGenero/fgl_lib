@@ -1,16 +1,4 @@
-
-
-FUNCTION is_leapyear(y)
-DEFINE y SMALLINT
-DEFINE d DATE
-
-    LET d = MDY(2,29,y)
-    IF d IS NULL THEN
-        RETURN FALSE
-    ELSE
-        RETURN TRUE
-    END IF
-END FUNCTION
+IMPORT util
 
 
 
@@ -20,7 +8,7 @@ DEFINE y SMALLINT
 
     CASE m
         WHEN 2
-            IF is_leapyear(y) THEN
+            IF util.Date.isLeapyear(y) THEN
                 RETURN 29
             ELSE
                 RETURN 28
@@ -38,7 +26,7 @@ END FUNCTION
 
 FUNCTION days_in_year(y)
 DEFINE y SMALLINT
-    RETURN IIF(is_leapyear(y),366,365)
+    RETURN IIF(util.Date.isLeapyear(y),366,365)
 END FUNCTION
 
 

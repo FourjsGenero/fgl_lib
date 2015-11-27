@@ -3,7 +3,6 @@ IMPORT FGL lib_date
 &include "test_inc.4gl"
 
 FUNCTION test_lib_date()
-    CALL test_is_leapyear()
     CALL test_days_in_month()
     CALL test_days_in_year()
     CALL test_first_of_month()
@@ -15,16 +14,6 @@ FUNCTION test_lib_date()
     CALL test_ddd()
     CALL test_mmmm()
     CALL test_mmm()
-END FUNCTION
-
-FUNCTION test_is_leapyear()
-    test11(is_leapyear,2016, TRUE)
-    test11(is_leapyear,2015, FALSE)
-    test11(is_leapyear,2015, FALSE)
-    test11(is_leapyear,2015, FALSE)
-    test11(is_leapyear,2000, TRUE)
-    test11(is_leapyear,2100, FALSE)
-
 END FUNCTION
 
 FUNCTION test_days_in_month()
