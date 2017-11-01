@@ -57,7 +57,4 @@ FUNCTION test_base64url_to_base64()
     test11(base64url_to_base64,"0123-_","0123+/==")
     test11(base64url_to_base64,"0123-_-_","0123+/+/")
 END FUNCTION
-
-
-
-    
+   

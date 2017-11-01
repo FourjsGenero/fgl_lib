@@ -1,5 +1,6 @@
-
-
+-- fglrun program_name -h --file xxx.pdf
+-- getArgumentExists("-h") RETURNS TRUE
+-- getArgumentParameter("--file") RETURNS xxx.pdf
 FUNCTION getArgumentExists(l_arg)
 DEFINE l_arg STRING
 

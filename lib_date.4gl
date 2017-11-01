@@ -44,46 +44,21 @@ DEFINE m,y SMALLINT
 END FUNCTION
 
 
-FUNCTION add_months(d,m,roundup)
+FUNCTION add_months(d,m)
 DEFINE d DATE
 DEFINE m SMALLINT
-DEFINE roundup BOOLEAN
-
-DEFINE dd,mm,yy INTEGER
-DEFINE dim SMALLINT
-
-    LET dd = DAY(d)
-    LET mm = MONTH(d)
-    LET yy = YEAR(d)
-
-    LET mm = yy*12+mm+m
-    LET yy = ((mm-1)/12)
-    LET mm = (mm-1) MOD 12 + 1
-
-    LET dim = days_in_month(mm,yy)
-    IF dd > dim THEN
-        IF roundup THEN
-            LET mm = mm + 1
-            IF mm > 12 THEN
-                LET mm = 1
-                LET yy = yy + 1
-            END IF
-            RETURN MDY(mm,1,yy)
-        ELSE
-            RETURN MDY(mm,dim,yy)
-        END IF
-    ELSE
-        RETURN MDY(mm,dd,yy)
-    END IF
+    LET d=  (d + m UNITS MONTH)
+    RETURN d
 END FUNCTION
 
 
 
-FUNCTION add_years(d,y,roundup)
+FUNCTION add_years(d,y)
 DEFINE d DATE
 DEFINE y SMALLINT
-DEFINE roundup BOOLEAN
-    RETURN add_months(d,y*12,roundup)
+
+    LET d= (d + y UNITS YEAR)
+    RETURN d
 END FUNCTION
 
 

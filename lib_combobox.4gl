@@ -60,14 +60,14 @@ DEFINE l_column_count SMALLINT
         CASE
             WHEN l_column_count = 1 
                 -- Add value as both code and description
-                CALL l_cb.addItem(l_sqlh.getResultValue(1), l_sqlh.getResultValue(1))
+                CALL l_cb.addItem(l_sqlh.getResultValue(1) CLIPPED, l_sqlh.getResultValue(1) CLIPPED)
             WHEN l_column_count = 2 AND l_format_string IS NULL
                 -- Add first value as code, second value as description
-                CALL l_cb.addItem(l_sqlh.getResultValue(1), l_sqlh.getResultValue(2))
+                CALL l_cb.addItem(l_sqlh.getResultValue(1) CLIPPED, l_sqlh.getResultValue(2) CLIPPED)
             WHEN l_column_count = 2
                 -- Add first value as code, add sfmt expression as description.  
                 -- Typical value for format string "%2 (%1)"  or "%1-%2"  etc
-                CALL l_cb.addItem(l_sqlh.getResultValue(1), SFMT(l_format_string,l_sqlh.getResultValue(1) CLIPPED, l_sqlh.getResultValue(2) CLIPPED)) 
+                CALL l_cb.addItem(l_sqlh.getResultValue(1) CLIPPED, SFMT(l_format_string,l_sqlh.getResultValue(1) CLIPPED, l_sqlh.getResultValue(2) CLIPPED) CLIPPED) 
         END CASE
     END WHILE
     CALL l_sqlh.close()

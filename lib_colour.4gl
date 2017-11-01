@@ -1,7 +1,12 @@
 IMPORT FGL lib_number
+IMPORT util
 
 PUBLIC TYPE colourType CHAR(7)  -- where first digit is &
 TYPE rgbType CHAR(2)
+
+&define n2h(p1) IIF(p1=0,"00", IIF(p1<16, "0"||util.Integer.toHexString(p1).toUpperCase(), util.Integer.toHexString(p1).toUpperCase()))
+&define h2n(p1) util.Integer.parseHexString(p1)
+
 
 FUNCTION add(c1,c2)
 DEFINE c1, c2 colourType
@@ -13,9 +18,10 @@ DEFINE r1,r2,g1,g2,b1,b2,r3,g3,b3 rgbType
     CALL split(c1) RETURNING r1,g1,b1
     CALL split(c2) RETURNING r2,g2,b2
 
-    LET r3 = lib_number.number_2_hex(lib_number.min(255,lib_number.hex_2_number(r1) + lib_number.hex_2_number(r2)),2)
-    LET g3 = lib_number.number_2_hex(lib_number.min(255,lib_number.hex_2_number(g1) + lib_number.hex_2_number(g2)),2)
-    LET b3 = lib_number.number_2_hex(lib_number.min(255,lib_number.hex_2_number(b1) + lib_number.hex_2_number(b2)),2)
+    
+    LET r3 = n2h(lib_number.min(255,h2n(r1) + h2n(r2)))
+    LET g3 = n2h(lib_number.min(255,h2n(g1) + h2n(g2)))
+    LET b3 = n2h(lib_number.min(255,h2n(b1) + h2n(b2)))
 
     LET result = rgb(r3,g3,b3)
     RETURN result
@@ -32,9 +38,9 @@ DEFINE r1,r2,g1,g2,b1,b2,r3,g3,b3 rgbType
     CALL split(c1) RETURNING r1,g1,b1
     CALL split(c2) RETURNING r2,g2,b2
 
-    LET r3 = lib_number.number_2_hex(((1-p)*lib_number.hex_2_number(r1) + p*lib_number.hex_2_number(r2)),2)
-    LET g3 = lib_number.number_2_hex(((1-p)*lib_number.hex_2_number(g1) + p*lib_number.hex_2_number(g2)),2)
-    LET b3 = lib_number.number_2_hex(((1-p)*lib_number.hex_2_number(b1) + p*lib_number.hex_2_number(b2)),2)
+    LET r3 = n2h(((1-p)*h2n(r1) + p*h2n(r2)))
+    LET g3 = n2h(((1-p)*h2n(g1) + p*h2n(g2)))
+    LET b3 = n2h(((1-p)*h2n(b1) + p*h2n(b2)))
 
     LET result = rgb(r3,g3,b3)
     RETURN result
@@ -50,9 +56,9 @@ DEFINE r1,r2,g1,g2,b1,b2,r3,g3,b3 rgbType
     CALL split(c1) RETURNING r1,g1,b1
     CALL split(c2) RETURNING r2,g2,b2
 
-    LET r3 = lib_number.number_2_hex(lib_number.max(0,lib_number.hex_2_number(r1) - lib_number.hex_2_number(r2)),2)
-    LET g3 = lib_number.number_2_hex(lib_number.max(0,lib_number.hex_2_number(g1) - lib_number.hex_2_number(g2)),2)
-    LET b3 = lib_number.number_2_hex(lib_number.max(0,lib_number.hex_2_number(b1) - lib_number.hex_2_number(b2)),2)
+    LET r3 = n2h(lib_number.max(0,h2n(r1) - h2n(r2)))
+    LET g3 = n2h(lib_number.max(0,h2n(g1) - h2n(g2)))
+    LET b3 = n2h(lib_number.max(0,h2n(b1) - h2n(b2)))
 
     LET result = rgb(r3,g3,b3)
     RETURN result
