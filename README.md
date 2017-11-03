@@ -1,7 +1,7 @@
 # fgl_lib
 Additional library functions that maybe beneficial for a Genero application.
 
-These will hopefully be whittled down if a similar funciton/method is added into the Genero language
+These will hopefully be whittled down if a similar function/method is added into the Genero language
 
 ## lib_base_application
 Additional functions that help in determining if arguments have been passed and if they have any value parameters.
