@@ -35,7 +35,7 @@ END FUNCTION
 
 
 
-FUNCTION last_of_month(m SMALLINT,y SMALLINT)
+FUNCTION last_of_month(m SMALLINT,y SMALLINT) RETURNS DATe
     RETURN MDY(m,days_in_month(m,y),y)
 END FUNCTION
 
