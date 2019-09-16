@@ -2,9 +2,7 @@ IMPORT util
 
 
 
-FUNCTION days_in_month(m,y)
-DEFINE m SMALLINT
-DEFINE y SMALLINT
+FUNCTION days_in_month(m SMALLINT,y SMALLINT) RETURNS SMALLINT
 
     CASE m
         WHEN 2
@@ -24,38 +22,33 @@ END FUNCTION
 
 
 
-FUNCTION days_in_year(y)
-DEFINE y SMALLINT
+FUNCTION days_in_year(y SMALLINT) RETURNS SMALLINT
+
     RETURN IIF(util.Date.isLeapyear(y),366,365)
 END FUNCTION
 
 
 
-FUNCTION first_of_month(m,y)
-DEFINE m, y SMALLINT
+FUNCTION first_of_month(m SMALLINT,y SMALLINT) RETURNS DATE
     RETURN MDY(m,1,y)
 END FUNCTION
 
 
 
-FUNCTION last_of_month(m,y)
-DEFINE m,y SMALLINT
+FUNCTION last_of_month(m SMALLINT,y SMALLINT)
     RETURN MDY(m,days_in_month(m,y),y)
 END FUNCTION
 
 
-FUNCTION add_months(d,m)
-DEFINE d DATE
-DEFINE m SMALLINT
+FUNCTION add_months(d DATE,m SMALLINT) RETURNS DATE
+
     LET d=  (d + m UNITS MONTH)
     RETURN d
 END FUNCTION
 
 
 
-FUNCTION add_years(d,y)
-DEFINE d DATE
-DEFINE y SMALLINT
+FUNCTION add_years(d DATE,y SMALLINT) RETURNS DATE
 
     LET d= (d + y UNITS YEAR)
     RETURN d
@@ -63,8 +56,7 @@ END FUNCTION
 
 
 
-FUNCTION dddd(l_day)
-DEFINE l_day SMALLINT
+FUNCTION dddd(l_day SMALLINT) RETURNS STRING
 
     CASE 
         WHEN l_day < 0 
@@ -76,8 +68,7 @@ DEFINE l_day SMALLINT
     END CASE
 END FUNCTION
 
-FUNCTION dd(l_day)
-DEFINE l_day SMALLINT
+FUNCTION dd(l_day SMALLINT) RETURNS STRING
 
     CASE 
         WHEN l_day < 0 
@@ -89,8 +80,7 @@ DEFINE l_day SMALLINT
     END CASE
 END FUNCTION
 
-FUNCTION ddd(l_day)
-DEFINE l_day SMALLINT
+FUNCTION ddd(l_day SMALLINT) RETURNS STRING
 
     CASE 
         WHEN l_day < 0 
@@ -102,8 +92,7 @@ DEFINE l_day SMALLINT
     END CASE
 END FUNCTION
 
-FUNCTION mmmm(l_month)
-DEFINE l_month SMALLINT
+FUNCTION mmmm(l_month SMALLINT) RETURNS STRING
 
     CASE
         WHEN l_month < 1
@@ -115,8 +104,7 @@ DEFINE l_month SMALLINT
     END CASE
 END FUNCTION
 
-FUNCTION mmm(l_month)
-DEFINE l_month SMALLINT
+FUNCTION mmm(l_month SMALLINT) RETURNS STRING
 
     CASE
         WHEN l_month < 1

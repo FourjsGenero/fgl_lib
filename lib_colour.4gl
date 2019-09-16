@@ -8,8 +8,7 @@ TYPE rgbType CHAR(2)
 &define h2n(p1) util.Integer.parseHexString(p1)
 
 
-FUNCTION add(c1,c2)
-DEFINE c1, c2 colourType
+FUNCTION add(c1 colourType,c2 colourType) RETURNS colourType
 
 DEFINE result colourType
 
@@ -27,9 +26,7 @@ DEFINE r1,r2,g1,g2,b1,b2,r3,g3,b3 rgbType
     RETURN result
 END FUNCTION
 
-FUNCTION mix(c1,c2,p)
-DEFINE c1, c2 colourType
-DEFINE p FLOAT
+FUNCTION mix(c1 colourType,c2 colourType,p FLOAT) RETURNS colourType
 
 DEFINE result colourType
 
@@ -46,8 +43,7 @@ DEFINE r1,r2,g1,g2,b1,b2,r3,g3,b3 rgbType
     RETURN result
 END FUNCTION
 
-FUNCTION subtract(c1,c2)
-DEFINE c1, c2 colourType
+FUNCTION subtract(c1 colourType,c2 colourType) RETURNS colourType
 
 DEFINE result colourType
 
@@ -66,29 +62,24 @@ END FUNCTION
 
 
 
-FUNCTION red(c)
-DEFINE c colourType
+FUNCTION red(c colourType) RETURNS rgbType
     RETURN c[2,3]
 END FUNCTION
 
-FUNCTION green(c)
-DEFINE c colourType
+FUNCTION green(c colourType) RETURNS rgbType
     RETURN c[4,5]
 END FUNCTION
 
-FUNCTION blue(c)
-DEFINE c colourType
+FUNCTION blue(c colourType) RETURNS rgbType
     RETURN c[6,7]
 END FUNCTION
 
-FUNCTION rgb(r,g,b)
-DEFINE r,g,b rgbType
+FUNCTION rgb(r rgbType,g rgbType,b rgbType) RETURNS colourType
 DEFINE c colourType
     LET c= "&",r,g,b
     RETURN c
 END FUNCTION
 
-FUNCTION split(c)
-DEFINE c colourType
+FUNCTION split(c colourType) RETURNS (rgbType, rgbType, rgbType)
     RETURN red(c), green(c), blue(c)
 END FUNCTION

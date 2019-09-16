@@ -1,7 +1,4 @@
-FUNCTION string_replace(l_original, l_old, l_new, l_occurences)
-DEFINE l_original, l_old, l_new STRING
-DEFINE l_occurences INTEGER
-
+FUNCTION string_replace(l_original STRING, l_old STRING, l_new STRING, l_occurences INTEGER) RETURNS STRING
 DEFINE sb base.StringBuffer
 
     LET sb = base.StringBuffer.create()
@@ -12,8 +9,7 @@ END FUNCTION
 
 
 
-FUNCTION proper(l_original)
-DEFINE l_original STRING
+FUNCTION proper(l_original STRING) RETURNS STRING
 
 DEFINE l_length, l_pos INTEGER
 DEFINE l_char STRING
@@ -37,9 +33,7 @@ END FUNCTION
 
 
 
-FUNCTION center(s,width)
-DEFINE s STRING
-DEFINE width INTEGER
+FUNCTION center(s STRING,width INTEGER) RETURNS STRING
 
 DEFINE l INTEGER
 DEFINE sb base.StringBuffer
@@ -71,8 +65,7 @@ END FUNCTION
 
 
 
-FUNCTION reverse(s)
-DEFINE s STRING
+FUNCTION reverse(s STRING) RETURNS STRING
 
 DEFINE sb base.StringBuffer
 
@@ -88,8 +81,7 @@ END FUNCTION
 
     
 # Convert Base64 to Base64 safe url format
-FUNCTION base64_to_base64url(s)
-DEFINE  s   STRING
+FUNCTION base64_to_base64url(s STRING) RETURNS STRING
 
 DEFINE  buf base.stringBuffer
 
@@ -103,8 +95,7 @@ END FUNCTION
 
 
 # Convert Base64 safe URL to Base64 format
-FUNCTION base64url_to_base64(s)
-DEFINE  s   STRING
+FUNCTION base64url_to_base64(s STRING) RETURNS STRING
 
 DEFINE  buf base.stringBuffer
 

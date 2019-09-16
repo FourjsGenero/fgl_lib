@@ -14,10 +14,7 @@
 #+ @param l_sql SQL Statements that returns a result set with 1 or 2 values.  The first value returned is the code, the second value is the description, or may form part of the description based on the format_string parameter
 #+ @param l_format_string SFMT string that can be used to format the second column.  %1 and %2 will refer to the two columns returned by the SQL statement.  Suggested values "%2 (%1)", "%1-%2".  If left blank, the second column in the SQL will be used to populate the description 
 #+
-FUNCTION populate_sql(l_fieldname, l_sql, l_format_string)
-DEFINE l_fieldname STRING
-DEFINE l_sql STRING
-DEFINE l_format_string STRING
+FUNCTION populate_sql(l_fieldname STRING, l_sql STRING, l_format_string STRING)
 
 DEFINE l_cb ui.ComboBox
 DEFINE l_sqlh base.SqlHandle

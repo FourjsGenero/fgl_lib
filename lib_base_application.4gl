@@ -1,8 +1,7 @@
 -- fglrun program_name -h --file xxx.pdf
 -- getArgumentExists("-h") RETURNS TRUE
 -- getArgumentParameter("--file") RETURNS xxx.pdf
-FUNCTION getArgumentExists(l_arg)
-DEFINE l_arg STRING
+FUNCTION getArgumentExists(l_arg STRING) RETURNS BOOLEAN
 
 DEFINE i INTEGER
 
@@ -16,8 +15,7 @@ END FUNCTION
 
 
 
-FUNCTION getArgumentPosition(l_arg)
-DEFINE l_arg STRING
+FUNCTION getArgumentPosition(l_arg STRING) RETURNS INTEGER
 
 DEFINE i INTEGER
 
@@ -31,8 +29,8 @@ END FUNCTION
 
 
 
-FUNCTION getArgumentParameterCount(l_arg)
-DEFINE l_arg STRING
+FUNCTION getArgumentParameterCount(l_arg STRING) RETURNS INTEGER
+
 DEFINE i INTEGER
 
 DEFINE l_count INTEGER
@@ -57,9 +55,7 @@ END FUNCTION
 
 
 
-FUNCTION getArgumentParameter(l_arg, l_idx)
-DEFINE l_arg STRING
-DEFINE l_idx INTEGER
+FUNCTION getArgumentParameter(l_arg STRING, l_idx INTEGER) RETURNS STRING
 
 DEFINE l_start INTEGER
 DEFINE l_count INTEGER
