@@ -22,6 +22,5 @@ MAIN
     testconstant(XOR(TRUE,FALSE), 1)
     testconstant(XOR(FALSE,TRUE), 1)
     testconstant(DMY(11,9,2001), "11/09/2001")-- assumses DBBDATE=DMY
-    testconstant(YMD(2001,9,11),"11/09/2001") -- assumses DBBDATE=DMY
- 
+    testconstant(YMD(2001,9,11),"11/09/2001") -- assumses DBBDATE=DMY 
 END MAIN
